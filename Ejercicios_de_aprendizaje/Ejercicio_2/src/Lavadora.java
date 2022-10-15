@@ -20,6 +20,11 @@ public class Lavadora extends Electrodomestico{
         this.carga = carga;
     }
 
+    /**
+     *  llama a crearElectrodomestico() de la clase
+     * padre, lo utilizamos para llenar los atributos heredados del padre y después llenamos
+     * el atributo propio de la lavadora.
+     */
     public void crearLavadora(){
 
         super.crearElectrodomestico();
@@ -28,6 +33,9 @@ public class Lavadora extends Electrodomestico{
         carga = leer.nextInt();
     }
 
+    /**
+     * carga mayor de 30 kg, aumentará el precio en $500
+     */
     @Override
     public void precioFinal() {
         super.precioFinal();

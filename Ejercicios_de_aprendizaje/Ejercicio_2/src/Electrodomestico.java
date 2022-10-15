@@ -54,6 +54,12 @@ public class Electrodomestico {
         this.peso = peso;
     }
 
+    /**
+     * comprueba que la letra es correcta,
+     * sino es correcta usara la letra F por defecto
+     * @param letra
+     * @return
+     */
     public char comprobarConsumoEnergetico(char letra){
 
         String nuevaLetra = String.valueOf(letra);
@@ -67,6 +73,12 @@ public class Electrodomestico {
         return 'F';
     }
 
+    /**
+     * comprueba que el color es correcto, y si no lo es,
+     * usa el color blanco por defecto.
+     * @param color
+     * @return
+     */
     public String comprobarColor(String color){
 
         for (String aux: colores) {
@@ -79,6 +91,11 @@ public class Electrodomestico {
         return "BLANCO";
     }
 
+    /**
+     * pide la información al usuario y llena el
+     * electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
+     * precio se le da un valor base de $1000
+     */
     public void crearElectrodomestico(){
 
         Scanner leer = new Scanner(System.in);
@@ -91,6 +108,10 @@ public class Electrodomestico {
         peso = leer.nextInt();
     }
 
+    /**
+     * según el consumo energético y su tamaño, aumentará el valor del
+     * precio.
+     */
     public void precioFinal(){
 
         String letra = String.valueOf(consumoEnergetico);

@@ -30,6 +30,10 @@ public class Televisor extends Electrodomestico{
         this.sintonizadorTDT = sintonizadorTDT;
     }
 
+    /**
+     * llama a crearElectrodomestico() de la clase
+     * padre
+     */
     public void crearTelevisor(){
 
         System.out.println("******CREAR NUEVO TELEVISOR******\n");
@@ -42,6 +46,11 @@ public class Televisor extends Electrodomestico{
         sintonizadorTDT = leer.next().equalsIgnoreCase("Y") ? true : false;
     }
 
+    /**
+     * resolución mayor de 40 pulgadas, se
+     * incrementará el precio un 30% y si tiene un sintonizador TDT incorporado, aumentará
+     * $500.
+     */
     @Override
     public void precioFinal() {
         super.precioFinal();

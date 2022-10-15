@@ -1,14 +1,16 @@
 public class Main {
     public static void main(String[] args) {
 
-        Electrodomestico lavadora = Lavadora.crearLavadora();
+        Lavadora lavadora = new Lavadora();
+        lavadora.crearLavadora();
         lavadora.precioFinal();
-        System.out.println(lavadora.getPrecio());
+        lavadora.mostrarElectrodomestico();
 
         //--------------------------------------------
 
-        Electrodomestico tv = Televisor.crearTelevisor();
+        Televisor tv = new Televisor();
+        tv.crearTelevisor();
         tv.precioFinal();
-        System.out.println(tv.getPrecio());
+        tv.mostrarElectrodomestico();
     }
 }

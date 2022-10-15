@@ -65,5 +65,13 @@ public class Televisor extends Electrodomestico {
         super.mostrarElectrodomestico();
         System.out.println("Resolución --> "+resolucion+"\nSintonizador --> "+sintonizadorTDT+"\n");
     }
+
+    @Override
+    public String getNombre() {
+        // TODO Auto-generated method stub
+        return "Televisor";
+    }
+
+    
     
 }

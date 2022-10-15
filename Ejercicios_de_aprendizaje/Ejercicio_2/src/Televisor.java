@@ -30,17 +30,16 @@ public class Televisor extends Electrodomestico{
         this.sintonizadorTDT = sintonizadorTDT;
     }
 
-    public static Televisor crearTelevisor(){
+    public void crearTelevisor(){
 
-        Scanner leer = new Scanner(System.in);
         System.out.println("******CREAR NUEVO TELEVISOR******\n");
-        Electrodomestico electro = crearElectrodomestico();
-        System.out.println("Ingrese la resolución del TV: ");
-        double pulgada = leer.nextDouble();
-        System.out.println("Ingrese (Y) si cuenta con sintonizador, caso contrario (N) ");
-        boolean siTiene = leer.next().equalsIgnoreCase("Y") ? true : false;
+        super.crearElectrodomestico();
+        Scanner leer = new Scanner(System.in);
 
-        return new Televisor(electro.getColor(), electro.getConsumoEnergetico(), electro.getPeso(), pulgada, siTiene);
+        System.out.println("Ingrese la resolución del TV: ");
+        resolucion = leer.nextDouble();
+        System.out.println("Ingrese (Y) si cuenta con sintonizador, caso contrario (N) ");
+        sintonizadorTDT = leer.next().equalsIgnoreCase("Y") ? true : false;
     }
 
     @Override
@@ -57,5 +56,11 @@ public class Televisor extends Electrodomestico{
             precioConIncremento = getPrecio() + 500;
             setPrecio(precioConIncremento);
         }
+    }
+
+    @Override
+    public void mostrarElectrodomestico() {
+        super.mostrarElectrodomestico();
+        System.out.println("Resolución --> "+resolucion+"\nSintonizador --> "+sintonizadorTDT+"\n");
     }
 }

@@ -1,34 +1,43 @@
 import java.util.ArrayList;
 
 public class App {
+
     public static void main(String[] args) throws Exception {
-        
-        Lavadora lav = new Lavadora();
-        lav.crearLavadora();
+                
+        ArrayList<Electrodomestico> listaElectro = iniciarRepo();
 
-        Lavadora lav2 = new Lavadora();
-        lav2.crearLavadora();
+        System.out.println("La suma de todos los electrodomesticos es de: "+sumaPrecio(listaElectro)+"$");
 
-        //******************************/
+    }
 
-        Televisor tv = new Televisor();
-        tv.crearTelevisor();
+    public static ArrayList<Electrodomestico> iniciarRepo(){
 
-        Televisor tv2 = new Televisor();
-        tv2.crearTelevisor();
-        
-        //*******************************/
         ArrayList<Electrodomestico> electro = new ArrayList<>();
+        Lavadora lavadora1 = new Lavadora("GRIS", 'B', 15, 35);
+        Lavadora lavadora2 = new Lavadora("Rojo", 'D', 45, 20);
+        Televisor tv1 = new Televisor("BLANCO", 'A', 30, 60, true);
+        Televisor tv2 = new Televisor("AZUL", 'F', 35, 65, true);
 
-        electro.add(lav);
-        electro.add(lav2);
-        electro.add(tv);
+        electro.add(lavadora1);
+        electro.add(lavadora2);
+        electro.add(tv1);
         electro.add(tv2);
 
-        for (Electrodomestico electrodomestico : electro) {
+        return electro;
+
+    }
+
+    public static double sumaPrecio(ArrayList<Electrodomestico> e){
+
+        double suma = 0;
+        for (Electrodomestico electrodomestico : e) {
             
             electrodomestico.precioFinal();
-            electrodomestico.mostrarElectrodomestico();
+            System.out.println(electrodomestico.getNombre()+", precio = "+electrodomestico.getPrecio()+"$");
+            suma += electrodomestico.getPrecio();
         }
+
+        return suma;
     }
+
 }

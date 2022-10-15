@@ -47,6 +47,12 @@ public class Lavadora extends Electrodomestico {
         System.out.println("Carga --> "+carga+"\n");
     }
 
+    @Override
+    public String getNombre() {
+        // TODO Auto-generated method stub
+        return "Lavadora";
+    }
+
     
     
 }

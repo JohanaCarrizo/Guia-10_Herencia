@@ -79,19 +79,16 @@ public class Electrodomestico {
         return "BLANCO";
     }
 
-    public static Electrodomestico crearElectrodomestico(){
+    public void crearElectrodomestico(){
 
         Scanner leer = new Scanner(System.in);
-        System.out.println("Ingrese el consumo energetico A ~ F ");
-        char consEnergetico = leer.next().charAt(0);
-
+        precio = 1000;
         System.out.println("Ingrese el color: ");
-        String colorIngresado = leer.next();
-
+        color = leer.next();
+        System.out.println("Ingrese el consumo electrico A ~ F ");
+        consumoEnergetico = leer.next().charAt(0);
         System.out.println("Ingrese el peso: ");
-        double pe = leer.nextDouble();
-
-        return new Electrodomestico(colorIngresado, consEnergetico, pe);
+        peso = leer.nextInt();
     }
 
     public void precioFinal(){
@@ -136,5 +133,11 @@ public class Electrodomestico {
         }
 
         return precio;
+    }
+
+    public void mostrarElectrodomestico(){
+
+        System.out.println("Precio --> "+precio+"\nColor --> "+color+
+                "\nConsumoEnergetico --> "+consumoEnergetico+"\nPeso --> "+peso);
     }
 }

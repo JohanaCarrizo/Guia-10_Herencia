@@ -87,8 +87,6 @@ public class Electrodomestico {
         System.out.println("Ingrese el peso: ");
         peso = leer.nextInt();
 
-        //new Electrodomestico(color, consumoEnergetico, peso);
-
     }
 
     public void precioFinal(){
@@ -141,4 +139,6 @@ public class Electrodomestico {
         System.out.println("Precio --> "+precio+"\nColor --> "+color+
         "\nConsumoEnergetico --> "+consumoEnergetico+"\nPeso --> "+peso);
     }
+
+    public String getNombre(){return "electrodomestico";} 
 }
